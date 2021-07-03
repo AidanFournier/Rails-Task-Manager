@@ -1,0 +1,19 @@
+<% if task.new_record?()%>
+  <%= form_for task do |f| %>
+      <%= f.label :title, class: "form-label m-2" %>
+      <%= f.text_field :title, class: "form-control m-2"%>
+      <%= f.label :details, class: "form-label m-2" %>
+      <%= f.text_field :details, class: "form-control m-2" %>
+      <%= f.submit "Create Task", class: "btn btn-secondary m-2" %>
+    <% end %>
+<% else %>
+  <%= form_for task do |f| %>
+    <%= f.label :title, class: "form-label m-2" %>
+    <%= f.text_field :title, class: "form-control m-2"%>
+    <%= f.label :details, class: "form-label m-2" %>
+    <%= f.text_field :details, class: "form-control m-2" %>
+    <%= f.check_box :completed, class: "m-2" %>
+    <%= f.label :completed?, class: "form-label m-2", value: "Completed?" %>
+    <%= f.submit "Update Task", class: "btn btn-secondary d-block m-2" %>
+  <% end %>
+<% end %>
